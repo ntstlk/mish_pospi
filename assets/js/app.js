@@ -33,6 +33,14 @@ if (navLinks.length && sections.length) {
 
 const scrollTopBtn = document.querySelector('[data-scrolltop]');
 if (scrollTopBtn) {
+  const toggleScrollTop = () => {
+    const show = window.scrollY > 220;
+    scrollTopBtn.classList.toggle('is-visible', show);
+  };
+
+  toggleScrollTop();
+  window.addEventListener('scroll', toggleScrollTop, { passive: true });
+
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });

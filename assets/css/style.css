@@ -474,7 +474,7 @@
 .contact-highlight {
   display: flex;
   align-items: center;
-  gap: var(--space-2xs);
+  gap: calc(var(--space-3xs) + 2px);
   padding: 0.65rem 1rem;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(112, 126, 224, 0.5);
@@ -486,23 +486,39 @@
   line-height: 1.2;
 }
 
-.contact-highlight .contact-label {
-  margin-right: 0;
-  color: rgba(214, 219, 255, 0.78);
-  display: flex;
+.contact-highlight .contact-icon {
+  display: inline-flex;
   align-items: center;
-  line-height: 1;
-  transform: translateY(1px);
+  justify-content: center;
+  width: 1.95rem;
+  height: 1.95rem;
+  flex-shrink: 0;
+}
+
+.contact-highlight .contact-icon-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(19%) saturate(864%) hue-rotate(197deg) brightness(96%) contrast(94%);
 }
 
 .contact-highlight .contact-link {
   margin-left: 0;
-  color: var(--color-secondary);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  display: flex;
+  color: rgba(204, 214, 255, 0.92);
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  line-height: 1.05;
+  display: inline-flex;
   align-items: center;
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-family: var(--font-display);
+}
+
+.contact-highlight .contact-link:hover,
+.contact-highlight .contact-link:focus {
+  color: rgba(222, 230, 255, 1);
 }
 
 .contact-meta {
@@ -615,7 +631,16 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), background var(--transition-base);
+  transition: transform var(--transition-base), background var(--transition-base), opacity var(--transition-base);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+.scrolltop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .scrolltop:hover,

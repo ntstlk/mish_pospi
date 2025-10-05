@@ -1,14 +1,14 @@
 :root {
-  --color-bg: #04040a;
-  --color-surface: rgba(16, 16, 28, 0.9);
-  --color-surface-strong: rgba(24, 25, 38, 0.95);
-  --color-primary: #10101a;
-  --color-primary-soft: rgba(76, 82, 150, 0.35);
-  --color-secondary: #6d7cff;
-  --color-accent: #4a57ff;
-  --color-text: #f4f4fb;
-  --color-text-muted: rgba(198, 201, 221, 0.72);
-  --color-border: rgba(90, 100, 170, 0.45);
+  --color-bg: #050506;
+  --color-surface: rgba(14, 14, 20, 0.9);
+  --color-surface-strong: rgba(20, 20, 28, 0.96);
+  --color-primary: #101015;
+  --color-primary-soft: rgba(88, 78, 120, 0.35);
+  --color-secondary: #c4b6ff;
+  --color-accent: #9889dd;
+  --color-text: #f3f3f8;
+  --color-text-muted: rgba(205, 207, 221, 0.68);
+  --color-border: rgba(120, 110, 190, 0.35);
   --shadow-lg: 0 24px 60px -10px rgba(17, 22, 52, 0.7);
   --shadow-md: 0 16px 32px -12px rgba(17, 22, 52, 0.55);
   --shadow-sm: 0 6px 20px -8px rgba(17, 22, 52, 0.45);
@@ -46,10 +46,10 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(circle at 16% 12%, rgba(90, 100, 170, 0.32) 0%, transparent 55%),
-    radial-gradient(circle at 72% 18%, rgba(74, 87, 255, 0.22) 0%, transparent 58%),
-    radial-gradient(circle at 48% 88%, rgba(33, 40, 88, 0.4) 0%, transparent 60%),
-    linear-gradient(200deg, #020206 0%, #07071a 45%, #04040a 100%);
+    radial-gradient(circle at 16% 12%, rgba(120, 110, 190, 0.24) 0%, transparent 55%),
+    radial-gradient(circle at 70% 20%, rgba(88, 76, 140, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 48% 88%, rgba(36, 36, 52, 0.55) 0%, transparent 62%),
+    linear-gradient(198deg, #020205 0%, #06060f 48%, #050506 100%);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -123,10 +123,10 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(16px);
-  background: rgba(3, 3, 12, 0.82);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 18px 48px -32px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(10, 10, 18, 0.95) 0%, rgba(5, 5, 12, 0.78) 100%);
+  border-bottom: 1px solid rgba(120, 110, 190, 0.18);
+  box-shadow: 0 20px 60px -40px rgba(0, 0, 0, 0.85);
 }
 
 .navbar-inner {
@@ -141,13 +141,8 @@ main {
   align-items: center;
   gap: var(--space-2xs);
   font-weight: 600;
-  font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: var(--space-3xs) var(--space-xs);
-  border-radius: var(--radius-sm);
-  background: rgba(74, 87, 255, 0.12);
-  border: 1px solid rgba(98, 112, 220, 0.35);
 }
 
 .brand svg {
@@ -170,17 +165,39 @@ main {
   transition: color var(--transition-base), background var(--transition-base);
   font-size: 0.95rem;
   color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  position: relative;
 }
 
 .nav-list a:hover,
 .nav-list a:focus,
 .nav-list a.active {
-  background: var(--color-primary-soft);
-  color: var(--color-text);
+  color: var(--color-secondary);
+}
+
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color-secondary);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus::after,
+.nav-list a.active::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero {
-  padding: clamp(0.9rem, 3vh, 2rem) 0 var(--space-2xl);
+  padding: clamp(0.8rem, 2.5vh, 1.6rem) 0 var(--space-xl);
 }
 
 .hero-inner {
@@ -196,8 +213,9 @@ main {
 }
 
 .hero-lede {
-  font-size: clamp(1.05rem, 0.5vw + 1rem, 1.25rem);
-  max-width: 620px;
+  font-size: clamp(1.02rem, 0.4vw + 1rem, 1.2rem);
+  max-width: 580px;
+  line-height: 1.45;
   color: var(--color-text-muted);
 }
 
@@ -355,6 +373,26 @@ main {
   gap: var(--space-xs);
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+}
+
+.card-link-arrow {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.card-link:hover,
+.card-link:focus {
+  color: var(--color-secondary);
 }
 
 .tag-list {

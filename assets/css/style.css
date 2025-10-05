@@ -1,8 +1,8 @@
 .hero-intro {
   display: grid;
   grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-  gap: var(--space-xl);
-  padding: var(--space-xl);
+  gap: var(--space-lg);
+  padding: var(--space-lg);
   align-items: center;
   background: linear-gradient(165deg, rgba(22, 24, 48, 0.96) 0%, rgba(12, 12, 24, 0.92) 100%);
   border: 1px solid var(--color-border);
@@ -12,8 +12,8 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  min-height: 210px;
-  width: clamp(180px, 24vw, 210px);
+  width: clamp(150px, 20vw, 190px);
+  aspect-ratio: 3 / 4;
   background: radial-gradient(circle at 42% 22%, rgba(74, 87, 255, 0.25), rgba(6, 6, 18, 0.92));
   box-shadow: var(--shadow-md);
   justify-self: center;
@@ -23,12 +23,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
 }
 
 .hero-content {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .hero-role {
@@ -82,7 +82,7 @@
 
 .hero-press {
   display: grid;
-  gap: var(--space-xs);
+  gap: var(--space-2xs);
   justify-items: center;
 }
 
@@ -406,6 +406,16 @@
 
 .contact-text .contact-link {
   margin-left: var(--space-3xs);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.contact-text .contact-label {
+  margin-right: var(--space-3xs);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .contact-meta {

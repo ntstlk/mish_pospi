@@ -172,7 +172,7 @@ main {
 }
 
 .hero {
-  padding: clamp(1.5rem, 4vh, 2.75rem) 0 var(--space-2xl);
+  padding: clamp(0.9rem, 3vh, 2rem) 0 var(--space-2xl);
 }
 
 .hero-inner {
@@ -376,7 +376,7 @@ main {
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
-  border: 2px solid rgba(139, 107, 255, 0.45);
+  border: 2px solid rgba(90, 90, 102, 0.6);
   box-shadow: var(--shadow-md);
 }
 
@@ -432,7 +432,7 @@ main {
 
 .timeline-item {
   padding-left: var(--space-lg);
-  border-left: 2px solid rgba(139, 107, 255, 0.25);
+  border-left: 2px solid rgba(80, 80, 92, 0.35);
   position: relative;
 }
 
@@ -444,8 +444,8 @@ main {
   width: 0.85rem;
   height: 0.85rem;
   border-radius: 50%;
-  background: linear-gradient(120deg, #8b6bff, #ff8f6b);
-  box-shadow: 0 0 0 6px rgba(139, 107, 255, 0.18);
+  background: linear-gradient(120deg, #3a3a44, #5a5a64);
+  box-shadow: 0 0 0 6px rgba(80, 80, 92, 0.25);
 }
 
 .timeline-item h4 {
@@ -536,7 +536,7 @@ main {
 
 @media (max-width: 720px) {
   .section {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
   }
 
   .navbar-inner {
@@ -557,7 +557,7 @@ main {
   }
 
   .hero {
-    padding: var(--space-2xl) 0 var(--space-xl);
+    padding: var(--space-lg) 0 var(--space-xl);
   }
 
   .hero-inner {
@@ -597,6 +597,10 @@ main {
 
   .hero-lede {
     font-size: 1rem;
+  }
+
+  .hero {
+    padding-top: var(--space-sm);
   }
 
   .hero-actions {

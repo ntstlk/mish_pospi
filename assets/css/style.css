@@ -258,7 +258,7 @@
   content: "";
   position: absolute;
   inset: -40% 35% 35% -40%;
-  background: radial-gradient(circle at top left, rgba(139, 107, 255, 0.22), transparent 60%);
+  background: radial-gradient(circle at top left, rgba(80, 80, 92, 0.25), transparent 60%);
   pointer-events: none;
 }
 
@@ -324,7 +324,7 @@
 .scrolltop:hover,
 .scrolltop:focus {
   transform: translateY(-3px);
-  background: rgba(139, 107, 255, 0.32);
+  background: rgba(48, 48, 58, 0.92);
 }
 
 footer .socials {

@@ -1,0 +1,23 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI продукт">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1d3d" />
+      <stop offset="100%" stop-color="#58d2f1" />
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c61ff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#f9c784" stop-opacity="0.85" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="42" fill="url(#bg)" />
+  <path d="M120 200c60-40 120-40 180 0s120 40 180 0 120-40 180 0" stroke="url(#wave)" stroke-width="24" stroke-linecap="round" fill="none" />
+  <g stroke="#ffffff" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round">
+    <path d="M180 360h440" />
+    <path d="M220 420h360" />
+  </g>
+  <g fill="#0f1224" fill-opacity="0.85">
+    <rect x="200" y="150" width="120" height="120" rx="28" />
+    <rect x="340" y="150" width="120" height="120" rx="28" />
+    <rect x="480" y="150" width="120" height="120" rx="28" />
+  </g>
+</svg>

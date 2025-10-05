@@ -1,0 +1,19 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Интерактивная инсталляция">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8c61ff" />
+      <stop offset="100%" stop-color="#1b295d" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58d2f1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f9c784" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="42" fill="url(#bg)" />
+  <g stroke="#ffffff" stroke-opacity="0.25" stroke-width="6" fill="none">
+    <rect x="70" y="110" width="660" height="360" rx="28" />
+    <path d="M110 160h580M110 208h580M110 256h580" />
+  </g>
+  <path d="M260 448l140-272 140 272" stroke="url(#beam)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="400" cy="192" r="42" fill="#f9c784" opacity="0.85" />
+</svg>

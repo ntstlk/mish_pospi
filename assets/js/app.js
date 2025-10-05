@@ -5,11 +5,14 @@ if (navLinks.length && sections.length) {
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
+          entry.target.classList.add('is-visible');
           navLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
           });
+        } else {
+          entry.target.classList.remove('is-visible');
         }
       });
     },
@@ -19,7 +22,12 @@ if (navLinks.length && sections.length) {
     }
   );
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(section => {
+    observer.observe(section);
+    if (section.getBoundingClientRect().top < window.innerHeight) {
+      section.classList.add('is-visible');
+    }
+  });
 }
 
 const scrollTopBtn = document.querySelector('[data-scrolltop]');
@@ -220,10 +228,6 @@ const navbar = document.querySelector('.navbar');
 if (brand && navbar) {
   let lastScroll = window.scrollY;
   let hidden = false;
-  let ticking = false;
-  const thresholdHide = 180;
-  const thresholdShow = 140;
-  const delta = 12;
 
   const hide = () => {
     brand.classList.add('brand--hidden');
@@ -237,24 +241,14 @@ if (brand && navbar) {
     hidden = false;
   };
 
-  const updateNavbar = () => {
+  window.addEventListener('scroll', () => {
     const current = window.scrollY;
-    const diff = current - lastScroll;
-
-    if (!hidden && current > thresholdHide && diff > delta) {
+    if (!hidden && current > 200 && current > lastScroll) {
       hide();
-    } else if (hidden && (current < thresholdShow || diff < -delta)) {
+    }
+    if (hidden && (current < 120 || current < lastScroll)) {
       show();
     }
-
     lastScroll = current;
-    ticking = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateNavbar);
-      ticking = true;
-    }
-  });
+  }, { passive: true });
 }

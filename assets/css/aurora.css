@@ -136,6 +136,8 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-sm) 0;
+  position: relative;
+  transition: padding var(--transition-base), gap var(--transition-base);
 }
 
 .brand {
@@ -151,25 +153,50 @@ main {
   background: rgba(200, 190, 255, 0.12);
   border: 1px solid rgba(200, 190, 255, 0.28);
   flex: 0 0 auto;
-  transition: opacity var(--transition-base), transform var(--transition-base);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 220px;
+  max-height: 44px;
+  transition: opacity 0.32s ease, transform 0.36s ease, max-width 0.4s ease, max-height 0.36s ease, padding 0.3s ease,
+    filter 0.36s ease, border-color 0.3s ease, border-width 0.3s ease;
 }
 
-.brand--hidden {
-  display: none !important;
+.navbar--brand-hidden {
+  transform: none;
 }
 
 .navbar--brand-hidden .nav-list {
   justify-content: center;
+  width: auto;
 }
 
 .navbar--brand-hidden .navbar-inner {
   justify-content: center;
-  padding: var(--space-sm) 0;
+  padding: var(--space-xs) 0;
+  gap: var(--space-xs);
+  flex-direction: row;
 }
 
-.navbar--brand-hidden .navbar-inner {
-  justify-content: center;
-  padding: var(--space-sm) 0;
+.navbar--brand-hidden .nav-list a {
+  padding: var(--space-4xs) var(--space-xs);
+}
+
+.navbar--brand-hidden .nav-list a::after {
+  bottom: -3px;
+}
+
+.brand--hidden {
+  opacity: 0;
+  transform: translateY(-65%) scale(0.9);
+  max-width: 0;
+  max-height: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+  pointer-events: none;
+  filter: blur(3px);
+  border-width: 0;
+  border-color: transparent;
 }
 
 
@@ -185,9 +212,13 @@ main {
   flex-wrap: wrap;
   gap: var(--space-xs);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list a {
+  display: inline-flex;
+  align-items: center;
   padding: var(--space-3xs) var(--space-xs);
   border-radius: var(--radius-sm);
   transition: color var(--transition-base), background var(--transition-base);
@@ -236,8 +267,8 @@ main {
 
 .hero-heading {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4vw + 1rem, 3.6rem);
-  line-height: 1.08;
+  font-size: clamp(1.85rem, 3vw + 1.05rem, 3.2rem);
+  line-height: 1.04;
 }
 
 .hero-lede {
@@ -402,6 +433,20 @@ main {
   gap: var(--space-xs);
   font-size: 0.9rem;
   color: var(--color-text-muted);
+  position: relative;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.card-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  right: -4px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(126, 136, 220, 0.45), transparent);
+  opacity: 0.8;
 }
 
 .card-link {

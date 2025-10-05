@@ -471,6 +471,32 @@
   text-transform: uppercase;
 }
 
+.contact-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(112, 126, 224, 0.5);
+  background: linear-gradient(135deg, rgba(74, 87, 255, 0.24), rgba(20, 24, 52, 0.92));
+  box-shadow: 0 12px 28px -18px rgba(20, 32, 72, 0.9);
+  color: var(--color-text);
+  max-width: none;
+  font-weight: 600;
+}
+
+.contact-highlight .contact-label {
+  margin-right: 0;
+  color: rgba(214, 219, 255, 0.78);
+}
+
+.contact-highlight .contact-link {
+  margin-left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .contact-meta {
   display: grid;
   gap: var(--space-md);

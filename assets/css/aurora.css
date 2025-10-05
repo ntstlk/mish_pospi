@@ -704,7 +704,13 @@ main > .section:not(:first-of-type)::after {
   }
 
   .nav-list a {
-    font-size: 0.88rem;
+    font-size: 0.94rem;
+    padding: var(--space-4xs) var(--space-xs);
+    letter-spacing: 0.03em;
+  }
+
+  .navbar--brand-hidden .nav-list a {
+    font-size: 0.84rem;
     padding: var(--space-5xs) var(--space-xs);
     letter-spacing: 0.02em;
   }

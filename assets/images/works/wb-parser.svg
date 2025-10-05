@@ -1,0 +1,22 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WB парсер скидок">
+  <defs>
+    <linearGradient id="wb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d14" />
+      <stop offset="100%" stop-color="#1a1a28" />
+    </linearGradient>
+    <linearGradient id="wb-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3f3f52" />
+      <stop offset="100%" stop-color="#6b6b7a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#wb-bg)" />
+  <g fill="none" stroke="#7c7c8a" stroke-opacity="0.4" stroke-width="10">
+    <rect x="120" y="140" width="560" height="280" rx="26" />
+    <path d="M160 200h480" />
+    <path d="M160 260h240" />
+  </g>
+  <rect x="160" y="332" width="200" height="32" rx="16" fill="url(#wb-accent)" opacity="0.9" />
+  <rect x="396" y="332" width="180" height="32" rx="16" fill="url(#wb-accent)" opacity="0.6" />
+  <path d="M600 224c0 40-32 72-72 72s-72-32-72-72 32-72 72-72 72 32 72 72Z" fill="none" stroke="#bbbbc6" stroke-width="12" opacity="0.6" />
+  <path d="M556 196l-44 44-18-18" stroke="#bbbbc6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

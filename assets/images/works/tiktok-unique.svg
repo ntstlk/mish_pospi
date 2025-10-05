@@ -1,0 +1,19 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Уникализатор видео">
+  <defs>
+    <linearGradient id="unique-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c14" />
+      <stop offset="100%" stop-color="#1f1f2b" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#unique-bg)" />
+  <g fill="none" stroke="#6f6f7d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+    <path d="M220 180h360l-60 90 60 90H220l60-90z" />
+  </g>
+  <g fill="none" stroke="#9a9aa8" stroke-width="10" stroke-linecap="round">
+    <path d="M480 180v48" />
+    <path d="M480 332v48" />
+  </g>
+  <circle cx="320" cy="270" r="22" fill="#575766" />
+  <circle cx="480" cy="270" r="22" fill="#575766" opacity="0.7" />
+  <rect x="180" y="140" width="440" height="280" rx="36" stroke="#7b7b8a" stroke-opacity="0.35" stroke-width="12" fill="none" />
+</svg>

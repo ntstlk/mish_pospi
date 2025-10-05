@@ -13,7 +13,6 @@
     <header class="navbar" role="banner">
       <div class="container navbar-inner">
         <a class="brand" href="#hero">
-          <svg viewBox="0 0 64 64" role="img" aria-hidden="true"><path d="M32 6c13.807 0 25 11.193 25 25S45.807 56 32 56 7 44.807 7 31 18.193 6 32 6Zm0 6c-10.493 0-19 8.507-19 19s8.507 19 19 19 19-8.507 19-19-8.507-19-19-19Zm0 8a11 11 0 1 1 0 22 11 11 0 0 1 0-22Z" /></svg>
           <span>@mish_pospi</span>
         </a>
         <nav role="navigation" aria-label="Основная навигация">
@@ -31,7 +30,7 @@
         <div class="container">
           <article class="card hero-intro">
             <figure class="hero-photo">
-              <img src="assets/images/profile.svg" alt="Силуэт разработчика" />
+              <img src="assets/images/profile.jpg" alt="@mish_pospi" />
             </figure>
             <div class="hero-content">
               <p class="section-eyebrow hero-role">frontend / backend разработчик</p>
@@ -67,10 +66,10 @@
               <div class="hero-press">
                 <span>Недавние задачи:</span>
                 <ul>
-                  <li>UI для SaaS-панели</li>
-                  <li>Node-парсер маркетплейса</li>
-                  <li>Сборщик отчётов PDF</li>
-                  <li>Миграция фронта на Vite</li>
+                  <li>WB парсер скидок</li>
+                  <li>TikTok аккаунт-менеджер</li>
+                  <li>SpeedType Trainer</li>
+                  <li>FoxyPlan</li>
                 </ul>
               </div>
             </div>
@@ -91,8 +90,8 @@
           <div class="grid projects-grid">
             <article class="card">
               <div class="card-media">
-                <span class="card-badge">frontend</span>
-                <img src="assets/images/works/wb-parser.svg" alt="WB парсер скидок" />
+                <span class="card-badge">FRONTEND</span>
+                <img src="assets/images/works/wb-parser.jpg" alt="WB парсер скидок" />
               </div>
               <h3 class="card-title">WB парсер скидок</h3>
               <p class="card-description">
@@ -105,17 +104,32 @@
                 <span class="tag">Postgres</span>
               </div>
               <footer class="card-footer">
-                <span>2024</span>
-                <a href="#contact">Посмотреть в деле →</a>
+                <span>2025</span>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
 
             <article class="card">
               <div class="card-media">
-                <span class="card-badge">productivity</span>
-                <img src="assets/images/works/planner.svg" alt="Планировщик дел" />
+                <span class="card-badge">PRODUCTIVITY</span>
+                <div class="carousel" data-carousel>
+                  <img src="assets/images/works/planner1.jpg" alt="FoxyPlan — главная доска" data-carousel-slide data-active />
+                  <img src="assets/images/works/planner2.jpg" alt="FoxyPlan — список задач" data-carousel-slide />
+                  <img src="assets/images/works/planner3.jpg" alt="FoxyPlan — календарь" data-carousel-slide />
+                  <img src="assets/images/works/planner4.jpg" alt="FoxyPlan — уведомления и напоминания" data-carousel-slide />
+                  <button type="button" class="carousel-control" data-dir="prev" data-carousel-prev aria-label="Предыдущий скрин">&#10094;</button>
+                  <button type="button" class="carousel-control" data-dir="next" data-carousel-next aria-label="Следующий скрин">&#10095;</button>
+                  <div class="carousel-dots">
+                    <button type="button" class="active" data-carousel-dot></button>
+                    <button type="button" data-carousel-dot></button>
+                    <button type="button" data-carousel-dot></button>
+                    <button type="button" data-carousel-dot></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="card-title">PlanFlow — планировщик дел</h3>
+              <h3 class="card-title">FoxyPlan — планировщик дел</h3>
               <p class="card-description">
                 Сервис для планирования дня: drag'n'drop задачи, тайм-блокинг, напоминания в Telegram и отчёты об исполнении.
                 Клиент на React, backend на Node.js с очередями для пушей.
@@ -127,14 +141,16 @@
               </div>
               <footer class="card-footer">
                 <span>2024</span>
-                <a href="#contact">Получить доступ →</a>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
 
             <article class="card">
               <div class="card-media">
-                <span class="card-бadge">automation</span>
-                <img src="assets/images/works/tiktok-unique.svg" alt="Уникализатор видео" />
+                <span class="card-badge">AUTOMATION</span>
+                <img src="assets/images/works/tiktok-unique.jpg" alt="Уникализатор видео" />
               </div>
               <h3 class="card-title">Уникализатор видео для TikTok</h3>
               <p class="card-description">
@@ -147,15 +163,17 @@
                 <span class="tag">CLI</span>
               </div>
               <footer class="card-footer">
-                <span>2023</span>
-                <a href="#contact">Узнать детали →</a>
+                <span>2025</span>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
 
             <article class="card">
               <div class="card-media">
-                <span class="card-badge">backend</span>
-                <img src="assets/images/works/tiktok-autoreg.svg" alt="Авторегер TikTok" />
+                <span class="card-badge">BACKEND</span>
+                <img src="assets/images/works/placeholder-sad.svg" alt="Авторегер TikTok" />
               </div>
               <h3 class="card-title">Авторег TikTok аккаунтов</h3>
               <p class="card-description">
@@ -168,15 +186,17 @@
                 <span class="tag">Automation</span>
               </div>
               <footer class="card-footer">
-                <span>2024</span>
-                <a href="#contact">Запросить прогон →</a>
+                <span>2025</span>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
 
             <article class="card">
               <div class="card-media">
-                <span class="card-бadge">management</span>
-                <img src="assets/images/works/tiktok-manager.svg" alt="Менеджер TikTok аккаунтов" />
+                <span class="card-badge">MANAGEMENT</span>
+                <img src="assets/images/works/tiktok-manager.jpg" alt="Менеджер TikTok аккаунтов" />
               </div>
               <h3 class="card-title">TikTok аккаунт-менеджер</h3>
               <p class="card-description">
@@ -190,19 +210,53 @@
               </div>
               <footer class="card-footer">
                 <span>2024</span>
-                <a href="#contact">Демо аккаунт →</a>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
 
             <article class="card">
               <div class="card-media">
-                <span class="card-бadge">и ещё</span>
-                <img src="assets/images/works/more-projects.svg" alt="В разработке" />
+                <span class="card-badge">LEARNING</span>
+                <div class="carousel" data-carousel>
+                  <img src="assets/images/works/typing-test1.jpg" alt="SpeedType Trainer — тренировка" data-carousel-slide data-active />
+                  <img src="assets/images/works/typing-test2.jpg" alt="SpeedType Trainer — статистика" data-carousel-slide />
+                  <button type="button" class="carousel-control" data-dir="prev" data-carousel-prev aria-label="Предыдущий скрин">&#10094;</button>
+                  <button type="button" class="carousel-control" data-dir="next" data-carousel-next aria-label="Следующий скрин">&#10095;</button>
+                  <div class="carousel-dots">
+                    <button type="button" class="active" data-carousel-dot></button>
+                    <button type="button" data-carousel-dot></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="card-title">20+ проектов в очереди</h3>
+              <h3 class="card-title">SpeedType Trainer</h3>
               <p class="card-description">
-                Работают боты, интеграции, витрины данных и сервисы для маркетинга. Подготовлю подборку под вашу нишу — нужно
-                лишь сказать, что собираетесь запускать.
+                Тренажёр слепой печати: словари, режимы, живой подсчёт скорости и точности. Интерфейс на React, храню
+                прогресс в IndexedDB и показываю отчёты по сессиям.
+              </p>
+              <div class="tag-list">
+                <span class="tag">React</span>
+                <span class="tag">IndexedDB</span>
+                <span class="tag">Charts</span>
+              </div>
+              <footer class="card-footer">
+                <span>2024</span>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
+              </footer>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <span class="card-badge">MORE</span>
+                <img src="assets/images/works/more-projects.svg" alt="Дополнительные проекты" />
+              </div>
+              <h3 class="card-title">20+ проектов в запасе</h3>
+              <p class="card-description">
+                Боты, интеграции, витрины данных и сервисы для маркетинга уже в продакшене. Подготовлю подборку под вашу нишу —
+                просто скажите, что собираетесь запускать.
               </p>
               <div class="tag-list">
                 <span class="tag">Automation</span>
@@ -210,8 +264,10 @@
                 <span class="tag">Product</span>
               </div>
               <footer class="card-footer">
-                <span>в процессе</span>
-                <a href="#contact">Запросить список →</a>
+                <span>2025</span>
+                <a href="#" class="card-link" data-gallery-open>Подробнее
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6 1.4-1.4L21 12l-6 6-1.4-1.4 4.6-4.6H5z"/></svg>
+                </a>
               </footer>
             </article>
           </div>
@@ -228,9 +284,7 @@
             <div class="contact-main">
               <h3>Связаться</h3>
               <p class="contact-text">Опишите задачу, стек и сроки. Отвечу с оценкой и планом — от прототипа до поддержки в проде.</p>
-              <ul class="contact-links">
-                <li><a href="https://t.me/mish_pospi" target="_blank" rel="noreferrer">@mish_pospi</a></li>
-              </ul>
+              <p class="contact-text"><span class="contact-label">TG</span> <a class="contact-link" href="https://t.me/mish_pospi" target="_blank" rel="noreferrer">@mish_pospi</a></p>
             </div>
             <div class="contact-meta">
               <div class="contact-block">
@@ -239,14 +293,6 @@
                   <li>Фронтенд (SPA, дизайн-системы)</li>
                   <li>Node.js API, интеграции, очереди</li>
                   <li>Парсеры, сбор и обработка данных</li>
-                </ul>
-              </div>
-              <div class="contact-block">
-                <span class="contact-label">Ближайшие слоты</span>
-                <ul>
-                  <li>Январь 2025 — парсеры / интеграции</li>
-                  <li>Февраль 2025 — frontend / UI</li>
-                  <li>Март 2025 — поддержка и автоматизация</li>
                 </ul>
               </div>
             </div>
@@ -262,6 +308,20 @@
     </footer>
 
     <button class="scrolltop" type="button" data-scrolltop>Наверх</button>
+
+    <div class="media-modal" data-modal hidden>
+      <div class="media-modal-backdrop" data-modal-close></div>
+      <div class="media-modal-content" role="dialog" aria-modal="true" aria-label="Галерея проекта">
+        <button class="media-modal-close" type="button" data-modal-close aria-label="Закрыть">&times;</button>
+        <div class="media-modal-stage">
+          <img src="" alt="" data-modal-image />
+        </div>
+        <button class="media-modal-control" type="button" data-modal-prev aria-label="Предыдущий">&#10094;</button>
+        <button class="media-modal-control" type="button" data-modal-next aria-label="Следующий">&#10095;</button>
+        <div class="media-modal-dots" data-modal-dots></div>
+        <p class="media-modal-caption" data-modal-caption></p>
+      </div>
+    </div>
 
     <script src="assets/js/app.js" defer></script>
   </body>

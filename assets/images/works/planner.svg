@@ -1,0 +1,25 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Планировщик дел">
+  <defs>
+    <linearGradient id="planner-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0e16" />
+      <stop offset="100%" stop-color="#1c1c26" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#planner-bg)" />
+  <g fill="none" stroke="#777785" stroke-width="10" stroke-opacity="0.35">
+    <rect x="150" y="120" width="500" height="320" rx="28" />
+    <path d="M150 188h500" />
+    <path d="M150 256h500" />
+    <path d="M150 324h500" />
+  </g>
+  <g stroke="#b0b0bc" stroke-width="12" stroke-linecap="round">
+    <path d="M210 256h120" />
+    <path d="M210 324h80" />
+  </g>
+  <rect x="230" y="132" width="40" height="32" rx="16" fill="#5a5a64" opacity="0.8" />
+  <rect x="522" y="132" width="40" height="32" rx="16" fill="#5a5a64" opacity="0.6" />
+  <g fill="#50505c">
+    <rect x="430" y="244" width="140" height="20" rx="10" opacity="0.8" />
+    <rect x="430" y="312" width="180" height="20" rx="10" opacity="0.6" />
+  </g>
+</svg>

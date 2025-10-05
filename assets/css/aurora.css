@@ -127,6 +127,7 @@ main {
   background: linear-gradient(180deg, rgba(10, 10, 18, 0.95) 0%, rgba(5, 5, 12, 0.78) 100%);
   border-bottom: 1px solid rgba(120, 110, 190, 0.18);
   box-shadow: 0 20px 60px -40px rgba(0, 0, 0, 0.85);
+  transition: transform var(--transition-base);
 }
 
 .navbar-inner {
@@ -140,9 +141,23 @@ main {
   display: flex;
   align-items: center;
   gap: var(--space-2xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-size: 1.05rem;
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  background: rgba(200, 190, 255, 0.08);
+  border: 1px solid rgba(200, 190, 255, 0.2);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.brand--hidden {
+  display: none;
+}
+
+.navbar--brand-hidden .nav-list {
+  justify-content: center;
 }
 
 .brand svg {
@@ -386,8 +401,9 @@ main {
 }
 
 .card-link-arrow {
-  font-size: 1.2em;
+  font-size: 1rem;
   line-height: 1;
+  transform: translateY(-1px);
 }
 
 .card-link:hover,
@@ -601,7 +617,11 @@ main {
   }
 
   .nav-list a {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
   }
 
   .hero {

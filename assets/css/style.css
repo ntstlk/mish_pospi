@@ -13,7 +13,7 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   width: clamp(150px, 20vw, 190px);
-  aspect-ratio: 3 / 4;
+  height: clamp(150px, 20vw, 190px);
   background: radial-gradient(circle at 42% 22%, rgba(74, 87, 255, 0.25), rgba(6, 6, 18, 0.92));
   box-shadow: var(--shadow-md);
   justify-self: center;
@@ -23,7 +23,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;
 }
 
 .hero-content {
@@ -55,12 +55,12 @@
 
 .hero-meta {
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--space-2xs);
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .hero-meta-item {
-  padding: var(--space-sm);
+  padding: var(--space-xs);
   border-radius: var(--radius-sm);
   background: rgba(20, 20, 28, 0.85);
   border: 1px solid rgba(84, 84, 94, 0.55);
@@ -559,7 +559,8 @@ footer .socials a:focus {
   }
 
   .hero-photo {
-    min-height: 260px;
+    width: clamp(160px, 46vw, 220px);
+    height: clamp(160px, 46vw, 220px);
   }
 
   .hero-content {

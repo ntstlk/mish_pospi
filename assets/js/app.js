@@ -1,3 +1,5 @@
+document.documentElement.classList.add('has-js');
+
 const navLinks = document.querySelectorAll('[data-nav-link]');
 const sections = Array.from(document.querySelectorAll('[data-section]'));
 
@@ -5,26 +7,25 @@ if (navLinks.length && sections.length) {
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          const id = entry.target.getAttribute('id');
+          if (!id) return;
           navLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
           });
-        } else {
-          entry.target.classList.remove('is-visible');
         }
       });
     },
     {
-      rootMargin: '-45% 0px -45% 0px',
-      threshold: 0,
+      rootMargin: '0px 0px 12% 0px',
+      threshold: 0.1,
     }
   );
 
   sections.forEach(section => {
     observer.observe(section);
-    if (section.getBoundingClientRect().top < window.innerHeight) {
+    if (section.getBoundingClientRect().top < window.innerHeight + 160) {
       section.classList.add('is-visible');
     }
   });

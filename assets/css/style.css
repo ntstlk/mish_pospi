@@ -1,3 +1,56 @@
+.has-js [data-section] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.5s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.has-js [data-section].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.has-js [data-section] .card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.45s ease, transform 0.55s ease;
+  transition-delay: 0ms;
+}
+
+.has-js [data-section].is-visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.has-js [data-section].is-visible .card:nth-of-type(2) {
+  transition-delay: 80ms;
+}
+
+.has-js [data-section].is-visible .card:nth-of-type(3) {
+  transition-delay: 140ms;
+}
+
+.has-js [data-section].is-visible .card:nth-of-type(4) {
+  transition-delay: 200ms;
+}
+
+.has-js [data-section].is-visible .card:nth-of-type(5) {
+  transition-delay: 260ms;
+}
+
+.has-js [data-section].is-visible .card:nth-of-type(6) {
+  transition-delay: 320ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-js [data-section],
+  .has-js [data-section] .card {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .hero-intro {
   display: grid;
   grid-template-columns: minmax(0, 320px) minmax(0, 1fr);

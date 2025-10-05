@@ -86,7 +86,35 @@ main {
 }
 
 .section {
+  position: relative;
   padding: var(--space-2xl) 0;
+}
+
+main > .section:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 88%);
+  height: 72px;
+  background: radial-gradient(ellipse at center, rgba(94, 110, 214, 0.24) 0%, rgba(30, 32, 60, 0.05) 42%, transparent 72%);
+  filter: blur(14px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+main > .section:not(:first-of-type)::after {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(600px, 78%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 132, 220, 0.6), rgba(170, 178, 255, 0.65), rgba(124, 132, 220, 0.6), transparent);
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 
@@ -267,8 +295,8 @@ main {
 
 .hero-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3vw + 1.05rem, 3.2rem);
-  line-height: 1.04;
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 2.8rem);
+  line-height: 1.02;
 }
 
 .hero-lede {
@@ -718,8 +746,8 @@ main {
   }
 
   .hero-heading {
-    font-size: clamp(2rem, 8vw + 0.4rem, 3.2rem);
-    line-height: 1.08;
+    font-size: clamp(1.6rem, 6vw + 0.4rem, 2.45rem);
+    line-height: 1.04;
   }
 
   .hero-lede {

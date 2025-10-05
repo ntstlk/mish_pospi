@@ -4,31 +4,79 @@ const navLinks = document.querySelectorAll('[data-nav-link]');
 const sections = Array.from(document.querySelectorAll('[data-section]'));
 
 if (navLinks.length && sections.length) {
+  let currentSectionId = '';
+
+  const setActiveLink = id => {
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  const syncActiveSection = () => {
+    if (!sections.length) return;
+
+    const targetLine = window.innerHeight * 0.3;
+    let activeId = sections[0].getAttribute('id') || '';
+
+    for (const section of sections) {
+      const id = section.getAttribute('id');
+      if (!id) continue;
+
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= targetLine) {
+        activeId = id;
+      } else {
+        break;
+      }
+    }
+
+    if (!activeId || activeId === currentSectionId) return;
+
+    currentSectionId = activeId;
+    setActiveLink(activeId);
+
+    if (window.location.hash !== `#${activeId}`) {
+      history.replaceState(null, '', `#${activeId}`);
+    }
+  };
+
+  let ticking = false;
+  const requestSync = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      syncActiveSection();
+      ticking = false;
+    });
+  };
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          const id = entry.target.getAttribute('id');
-          if (!id) return;
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-          });
         }
       });
+      requestSync();
     },
     {
-      rootMargin: '0px 0px 12% 0px',
-      threshold: 0.1,
+      rootMargin: '0px 0px -5% 0px',
+      threshold: 0,
     }
   );
 
+  const preloadOffset = window.innerHeight * 0.9;
+
   sections.forEach(section => {
     observer.observe(section);
-    if (section.getBoundingClientRect().top < window.innerHeight + 160) {
+    if (section.getBoundingClientRect().top < preloadOffset) {
       section.classList.add('is-visible');
     }
   });
+
+  requestSync();
+  window.addEventListener('scroll', requestSync, { passive: true });
+  window.addEventListener('resize', requestSync);
 }
 
 const scrollTopBtn = document.querySelector('[data-scrolltop]');
@@ -239,19 +287,39 @@ if (brand && navbar) {
   let hidden = false;
 
   const hide = () => {
-    brand.classList.add('brand--hidden');
+    if (hidden) return;
     navbar.classList.add('navbar--brand-hidden');
+    requestAnimationFrame(() => {
+      brand.classList.add('brand--hidden');
+    });
     hidden = true;
   };
 
   const show = () => {
+    if (!hidden) return;
     brand.classList.remove('brand--hidden');
-    navbar.classList.remove('navbar--brand-hidden');
+    requestAnimationFrame(() => {
+      navbar.classList.remove('navbar--brand-hidden');
+    });
     hidden = false;
   };
 
   window.addEventListener('scroll', () => {
     const current = window.scrollY;
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+    const distanceToBottom = maxScroll - current;
+
+    if (current < 0) {
+      lastScroll = 0;
+      return;
+    }
+
+    if (distanceToBottom <= 48) {
+      show();
+      lastScroll = current;
+      return;
+    }
+
     if (!hidden && current > 200 && current > lastScroll) {
       hide();
     }

@@ -202,7 +202,6 @@ main > .section:not(:first-of-type)::after {
   justify-content: center;
   padding: var(--space-xs) 0;
   gap: var(--space-xs);
-  flex-direction: row;
 }
 
 .navbar--brand-hidden .nav-list a {
@@ -215,7 +214,7 @@ main > .section:not(:first-of-type)::after {
 
 .brand--hidden {
   opacity: 0;
-  transform: translateY(-65%) scale(0.9);
+  transform: translateY(-110%) scale(0.9);
   max-width: 0;
   max-height: 0;
   padding-left: 0;
@@ -225,6 +224,7 @@ main > .section:not(:first-of-type)::after {
   filter: blur(3px);
   border-width: 0;
   border-color: transparent;
+  position: absolute;
 }
 
 
@@ -249,7 +249,7 @@ main > .section:not(:first-of-type)::after {
   align-items: center;
   padding: var(--space-3xs) var(--space-xs);
   border-radius: var(--radius-sm);
-  transition: color var(--transition-base), background var(--transition-base);
+  transition: color var(--transition-base), background var(--transition-base), transform var(--transition-base);
   font-size: 0.95rem;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
@@ -257,9 +257,10 @@ main > .section:not(:first-of-type)::after {
 }
 
 .nav-list a:hover,
-.nav-list a:focus,
+.nav-list a:focus-visible,
 .nav-list a.active {
   color: var(--color-secondary);
+  transform: translateY(-1px);
 }
 
 .nav-list a::after {
@@ -277,7 +278,7 @@ main > .section:not(:first-of-type)::after {
 }
 
 .nav-list a:hover::after,
-.nav-list a:focus::after,
+.nav-list a:focus-visible::after,
 .nav-list a.active::after {
   opacity: 1;
   transform: translateY(0);
@@ -327,6 +328,20 @@ main > .section:not(:first-of-type)::after {
   transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), border-color var(--transition-base);
   cursor: pointer;
   min-height: 44px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: -20% -40%;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.32), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  transform: translate3d(-10%, 20%, 0);
+  z-index: -1;
 }
 
 .btn-primary {
@@ -336,8 +351,14 @@ main > .section:not(:first-of-type)::after {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.01);
   box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover::after,
+.btn-primary:focus::after {
+  opacity: 0.6;
+  transform: translate3d(0, 0, 0);
 }
 
 .btn-secondary {
@@ -349,7 +370,13 @@ main > .section:not(:first-of-type)::after {
 .btn-secondary:hover,
 .btn-secondary:focus {
   border-color: rgba(110, 126, 220, 0.7);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.btn-secondary:hover::after,
+.btn-secondary:focus::after {
+  opacity: 0.45;
+  transform: translate3d(0, 0, 0);
 }
 
 .glass-panel {
@@ -383,8 +410,10 @@ main > .section:not(:first-of-type)::after {
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background: linear-gradient(175deg, rgba(20, 22, 42, 0.96) 0%, rgba(10, 12, 24, 0.92) 100%);
+  background-size: 180% 180%;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base),
+    background-position 620ms ease;
 }
 
 .card::before {
@@ -395,20 +424,24 @@ main > .section:not(:first-of-type)::after {
   border: 1px solid transparent;
   background: radial-gradient(circle at 20% 20%, rgba(74, 87, 255, 0.18), transparent 60%);
   opacity: 0;
-  transition: opacity var(--transition-base);
+  animation: cardGlowSoft 8s ease-in-out infinite;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  transform: translateY(8px);
   pointer-events: none;
 }
 
 .card:hover,
 .card:focus-within {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.01);
   box-shadow: var(--shadow-md);
   border-color: rgba(108, 126, 220, 0.65);
+  background-position: 60% 40%;
 }
 
 .card:hover::before,
 .card:focus-within::before {
-  opacity: 1;
+  opacity: 0.85;
+  transform: translateY(0);
 }
 
 .card-media {
@@ -416,6 +449,7 @@ main > .section:not(:first-of-type)::after {
   overflow: hidden;
   border-radius: var(--radius-sm);
   aspect-ratio: 16 / 10;
+  isolation: isolate;
 }
 
 .card-media img {
@@ -423,11 +457,28 @@ main > .section:not(:first-of-type)::after {
   height: 100%;
   object-fit: cover;
   transform-origin: center;
-  transition: transform var(--transition-base);
+  transition: transform var(--transition-base), filter var(--transition-base);
 }
 
-.card:hover .card-media img {
-  transform: scale(1.05);
+.card:hover .card-media img,
+.card:focus-within .card-media img {
+  transform: scale(1.07);
+  filter: brightness(1.05);
+}
+
+.card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 24, 58, 0) 10%, rgba(24, 36, 80, 0.55) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 1;
+}
+
+.card:hover .card-media::after,
+.card:focus-within .card-media::after {
+  opacity: 1;
 }
 
 .card-badge {
@@ -510,8 +561,17 @@ main > .section:not(:first-of-type)::after {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: 999px;
-  background: rgba(74, 87, 255, 0.18);
+  background: linear-gradient(120deg, rgba(74, 87, 255, 0.22), rgba(28, 32, 64, 0.88));
+  background-size: 160% 160%;
   border: 1px solid rgba(98, 112, 220, 0.45);
+  transition: transform var(--transition-base), background-position 480ms ease, box-shadow var(--transition-base);
+}
+
+.tag:hover,
+.tag:focus {
+  transform: translateY(-2px);
+  background-position: 90% 50%;
+  box-shadow: 0 8px 16px -12px rgba(78, 104, 230, 0.55);
 }
 
 .profile-card {

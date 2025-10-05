@@ -704,7 +704,9 @@ main > .section:not(:first-of-type)::after {
   }
 
   .nav-list a {
-    font-size: 1.05rem;
+    font-size: 0.88rem;
+    padding: var(--space-5xs) var(--space-xs);
+    letter-spacing: 0.02em;
   }
 
   .brand {
